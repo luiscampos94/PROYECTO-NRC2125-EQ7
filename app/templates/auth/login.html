@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2 class="text-slate-700 my-2">{% block title %}Inicio de Sesión{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="{{ url_for('auth.login')}}" class="container">
+    <label for="username">Usuario</label>
+    <input type="text" name="username" id="username" class="rounded-md mb-2" required>
+      <label for="password">Contraseña</label>
+      <div class="rounded-md mb-2">
+        <div class="rounded-md mb-2">
+          <div class="input-group">
+          <input type="password" name="password" id="password" class="form-control rounded-md" required>
+            <div class="input-group-append ">
+              <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class=" fa fa-eye-slash icon "  style="color:black"></span> </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <input type="password" name="password" id="password" class="rounded-md mb-6" required> -->
+    <input type="submit" value="Entrar" class="w-full bg-indigo-500 text-white rounded-md py-2 cursor-pointer">
+  </form>
+   
+{% endblock %}
